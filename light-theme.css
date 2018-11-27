@@ -1,0 +1,336 @@
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+
+/** COLORS ***/
+.color__theme-color-2 {
+  color: rgba(0, 0, 0, 0.6); }
+
+.color__theme-color-3 {
+  color: rgba(0, 0, 0, 0.7); }
+
+.color__theme-color-4 {
+  color: rgba(0, 0, 0, 0.8); }
+
+.color__theme-color-5 {
+  color: black; }
+
+.color__theme-color-6 {
+  color: rgba(0, 0, 0, 0.4); }
+
+.color__theme-color-7 {
+  color: rgba(0, 0, 0, 0.2); }
+
+.color__theme-color-8 {
+  color: #e0e0e0; }
+
+.color__theme-color-9 {
+  color: rgba(224, 224, 224, 0.9); }
+
+.color__main-color-2 {
+  color: red; }
+
+.color__main-color-3 {
+  color: #4cd964; }
+
+.color__main-color-4 {
+  color: #007aff; }
+
+.color__main-color-5 {
+  color: #f15a24; }
+
+.color__main-color-6 {
+  color: rgba(0, 122, 255, 0.6); }
+
+/** BACKGROUD ***/
+.bg__theme-color-1 {
+  background-color: #f6f6f6; }
+
+.bg__theme-color-2 {
+  background-color: rgba(224, 224, 224, 0.9); }
+
+.bg__theme-color-3 {
+  background-color: rgba(246, 246, 246, 0.8); }
+
+.bg__theme-color-4 {
+  background-color: rgba(246, 246, 246, 0.98); }
+
+.bg__theme-color-6 {
+  background-color: rgba(246, 246, 246, 0.9); }
+
+.bg__theme-color-7 {
+  background-color: rgba(246, 246, 246, 0.95); }
+
+.bg__theme-color-8 {
+  background-color: #cecece; }
+
+.bg__theme-color-9 {
+  background-color: rgba(246, 246, 246, 0.9); }
+
+.bg__main-color-1 {
+  background-color: rgba(255, 0, 0, 0.1); }
+
+.bg__main-color-2 {
+  background-color: #4cd964; }
+
+.bg__main-color-4 {
+  background-color: rgba(0, 122, 255, 0.8); }
+
+.bg__main-color-5 {
+  background-color: #007aff; }
+
+.bg__main-color-6 {
+  background-color: red; }
+
+.bg__main-color-7 {
+  background-color: rgba(0, 122, 255, 0.9); }
+
+.bg__main-color-8 {
+  background-color: rgba(255, 0, 0, 0.9); }
+
+.bg__transparent {
+  background: transparent; }
+
+/** BORDER ***/
+.border__theme-color-1 {
+  border-color: rgba(246, 246, 246, 0.9); }
+
+.border__theme-color-4 {
+  border-color: rgba(0, 0, 0, 0.2); }
+
+.border__theme-color-9 {
+  border-color: rgba(0, 0, 0, 0.1); }
+
+.border__main-color-1 {
+  border-left-color: red; }
+
+.border__main-color-3 {
+  border-color: #4cd964; }
+
+/**** OFFLINE **/
+.border--bottom__main-color-1 {
+  border-bottom-color: black; }
+
+.border--top__main-color-2 {
+  border-top-color: rgba(224, 224, 224, 0.2); }
+
+/**** SPLASH **/
+.border--top__theme-color-8 {
+  border-top-color: rgba(0, 0, 0, 0.5); }
+
+/**** TIME-LINE **/
+.border--left__theme-color-9 {
+  border-left-color: rgba(0, 0, 0, 0.1); }
+
+.border--right__theme-color-1 {
+  border-right-color: rgba(0, 0, 0, 0.1); }
+
+.border--bottom__theme-color-1 {
+  border-bottom-color: rgba(0, 0, 0, 0.1); }
+
+/******************** TIMELINE ******************/
+.timeline__content__event__content--active,
+.timeline__content__event__content--selected {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.8); }
+
+.timeline--vertical .timeline__content__event__content--right {
+  border-right-color: red; }
+
+.timeline--vertical .timeline__content__event__content--right.timeline__content__event__content--finished {
+  border-right-color: rgba(0, 0, 0, 0.1); }
+
+.timeline__content__event__content--finished {
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.timeline__content__now::before {
+  background-color: #4cd964; }
+
+.timeline__content__now--reserved,
+.timeline__content__now--reserved::before {
+  background-color: red; }
+
+.timeline__content__now__time__label {
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 0px 10px 12px inset, rgba(255, 255, 255, 0.9) 0px 0px 10px 3px; }
+
+.timeline__content__now__time__label {
+  color: #4cd964; }
+
+.timeline__content__now__time__label--reserved {
+  color: red; }
+
+/****************** END TIMELINE ****************/
+/****************** ROOM ************************/
+.room__container__action__reserve-now::before {
+  color: black; }
+
+.room__container__status__action-btn::before {
+  color: rgba(0, 0, 0, 0.8); }
+
+.room__container__theme__button--selected {
+  background-color: #4cd964; }
+
+.room__container__current-time__spacer--reserved {
+  color: red; }
+
+.room__container__current-time__spacer--available {
+  color: #4cd964; }
+
+.menu__overlay::before {
+  background-color: rgba(224, 224, 224, 0.9); }
+
+.room__action__check_in__btn::before,
+.room__action__extend__btn::before,
+.room__action__end__btn::before,
+.room__action__help__btn::before,
+.room__action__find-room__btn::before,
+.room__action__vision__btn::before {
+  color: rgba(224, 224, 224, 0.9); }
+
+.room__action__check_in__btn[disabled],
+.room__action__extend__btn[disabled],
+.room__action__end__btn[disabled],
+.room__action__find-room__btn[disabled] {
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.room__container__theme__button {
+  border-color: #4cd964; }
+
+.room__container__theme__button--selected {
+  background-color: #4cd964; }
+
+/****************** END ROOM ********************/
+/****************** SCREENSAVER ********************/
+.screensaver__container--reserved {
+  border-color: rgba(255, 0, 0, 0.8); }
+
+.screensaver__container--available {
+  border-color: #4cd964; }
+
+/****************** END SCREENSAVER ****************/
+/****************** MODAL ****************/
+.modal__container__border {
+  border-color: rgba(0, 0, 0, 0.2); }
+
+.modal-dialog {
+  background-color: rgba(246, 246, 246, 0.98); }
+
+.modal-content {
+  background-color: inherit;
+  color: rgba(0, 0, 0, 0.6); }
+  .modal-content .modal-footer div:nth-child(n+2) {
+    border-color: rgba(0, 0, 0, 0.2); }
+
+/****************** END MODAL ****************/
+/****************** TIME - ROLL ****************/
+.time-roll__viewport__selected span {
+  color: black; }
+
+/************* END TIME - ROLL ****************/
+/****************** ABOUT MODAL ****************/
+.modal-about::before {
+  background-color: rgba(224, 224, 224, 0.7); }
+
+/************* END ABOUT MODAL ****************/
+/****************** MENU ITEM ****************/
+.menu__item--disabled {
+  background-color: #cecece !important; }
+
+.menu__icon {
+  color: rgba(224, 224, 224, 0.9); }
+
+.menu__icon--active {
+  color: rgba(0, 122, 255, 0.9); }
+
+.menu__icon--hover {
+  color: rgba(224, 224, 224, 0.9); }
+
+/****************** MENU ITEM ****************/
+.form-control:focus {
+  color: #007aff;
+  border-color: initial; }
+
+.border--error {
+  border-color: red !important; }
+
+/****************** SCREENSAVER ********************/
+.screensaver__container::after {
+  background-color: white;
+  opacity: 0.9; }
+
+/****************** END SCREENSAVER ****************/
+/****************** ROOM ************************/
+.room__container::after {
+  background-color: white;
+  opacity: 0.9; }
+
+.room__container--available .room__container__status__title__label1,
+.room__container--available .room__container__status__countdown__hours__number,
+.room__container--available .room__container__status__countdown__minutes__number {
+  color: #4cd964; }
+
+.room__container--available .room__container__status__countdown__hours__time,
+.room__container--available .room__container__status__countdown__minutes__time {
+  color: #4cd964;
+  border: 1px solid #4cd964; }
+
+.room__container--reserved .room__container__status__title__label1,
+.room__container--reserved .room__container__status__countdown__hours__number,
+.room__container--reserved .room__container__status__countdown__minutes__number {
+  color: red; }
+
+.room__container--reserved .room__container__status__countdown__hours__time,
+.room__container--reserved .room__container__status__countdown__minutes__time {
+  color: red;
+  border: 1px solid red; }
+
+.bg__theme-color-8 {
+  background-color: rgba(206, 206, 206, 0.9); }
+
+.border__theme-color-1 {
+  border-color: rgba(206, 206, 206, 0.9); }
+
+.border__theme-color-2 {
+  border-color: rgba(206, 206, 206, 0.9); }
+
+.room--horizontal .room-details::after {
+  background: url(./assets/images/Top_Pointer_Light.png) no-repeat center top; }
+
+.room--horizontal .reserve-now::after {
+  background: url(./assets/images/Down_Pointer_Light.png) no-repeat center top; }
+
+.room--horizontal .action-btn::after {
+  background: url(./assets/images/Down_Arrow_Light.png) no-repeat center top; }
+
+.room--horizontal .timeline-tap::after {
+  background: url(./assets/images/Tap_Icn_Light.png) no-repeat center top; }
+
+.room--horizontal .timeline-swipe::after {
+  background: url(./assets/images/Swipe_Icn_Light.png) no-repeat center top; }
+
+.room--vertical .room-details::after {
+  background: url(./assets/images/Top_Pointer_Light.png) no-repeat center top; }
+
+.room--vertical .reserve-now::after {
+  background: url(./assets/images/Top_Pointer_Light.png) no-repeat center top; }
+
+.room--vertical .action-btn::after {
+  background: url(./assets/images/Up_Arrow_Light.png) no-repeat center top; }
+
+.room--vertical .timeline-tap::after {
+  background: url(./assets/images/Tap_Icn_Vertical_Light.png) no-repeat center top; }
+
+.room--vertical .timeline-swipe::after {
+  background: url(./assets/images/Swipe_Icn_Vertical_Light.png) no-repeat center top; }
+
+.modalOpacity {
+  background-color: rgba(224, 224, 224, 0.9); }
+
+/******************** TIMELINE ******************/
+.timeline__content__now__time__label {
+  box-shadow: rgba(246, 246, 246, 0.9) 0px 0px 10px 12px inset, rgba(246, 246, 246, 0.9) 0px 0px 10px 3px; }
+
+.bg__theme-color-10 {
+  background-color: black; }
